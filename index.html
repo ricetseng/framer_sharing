@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Rice Tseng</title>
+
+		<meta name="description" content="Framer Sharing">
+		<meta name="author" content="Rice Tseng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-transition="linear" data-background="#22b4fb" data-background-transition="linear">
+					<img src="images/icon-framer-studio.png" style="border:0px;box-shadow: 0 0 0px rgba(0, 0, 0, 0);background:#22b4fb;width:150px;">
+					<h1>Framer.js</h1>
+					<h3>Interactive prototyping tool</h3>
+					<p>
+						<small><a href="https://dribbble.com/ricetseng">Rice Tseng</a> / Interaction Designer @Yahoo</small>
+					</p>
+				</section>
+
+				<section data-transition="linear">
+					<section data-transition="linear">
+						<h1>Why Framer?</h1>
+					</section>
+					
+					<section data-transition="linear">
+						<h1>Cross-platform</h1>
+						<h3>for iOS, Android, desktop or the web</h3>
+					</section>
+
+					<section data-transition="linear">
+						<h1>High-fidelity prototypes</h1>
+						<h3>!= higher resolution </h3>
+					</section>
+
+				    <section data-transition="linear">
+				    	<h3>cause me</h3>
+				    	<h1>to think different</h1>
+				    	<h3>and better idea</h3>
+						
+					</section>
+
+					<section data-transition="linear" data-background="images/hand.png">
+						<h1>Real devices</h1>
+						<h3>Play, see and touch designs on real devices</h3>
+					</section>
+				</section>
+
+				<section data-transition="linear">
+					<section data-transition="linear">
+						<h1>Key points before coding</h1>
+					</section>
+
+					<section data-transition="linear">
+						<p>Initial properties </p>
+						<p class="fragment">How long should the animation take?</p>
+						<p class="fragment">What’s the element timing?</p>
+						<p class="fragment">Which element is the next animations?</p>
+						<p class="fragment">Final properties </p>
+
+						 <aside class="notes">
+					        Does Item 2 start animating at the same time as Item 1, or does it have a slightly staggered start time? 
+					    </aside>
+					</section>
+
+				</section>
+
+				<section data-transition="linear">
+					<h1>Source</h1>
+					<p><a href="https://www.facebook.com/groups/framerjs/">Facebook Community</a></p>
+					<p><a href="http://framerjs.com/docs/">Framer.js Docs</a></p>
+					<p><a href="http://framerjs.com/examples/">Example</a></p>
+					<aside class="notes">
+					    我也不是純資訊背景的人。這邊想強調的是，prototyping是快速，不是寫的一條條美麗的程式碼，我們主要的目的是溝通，所以，為達目的不擇手段。像我也不可能記住所有的code，目的是做出好使用經驗的設計，所以copy paste是我很常用的方式。
+					</aside>
+				</section>
+
+				<section data-transition="linear">
+				    <section data-transition="linear" data-background-iframe="http://framerjs.com/examples/">
+				    
+					</section>
+
+					<section data-transition="linear">
+					    <iframe src="http://share.framerjs.com/54pdfx2eo1vv/" style="width: 1920px; height: 500px;"></iframe>
+					</section>
+
+					<section data-transition="linear">
+					    <iframe src="http://framerjs.com/examples/preview/#google-now-overview.framer" style="width: 1920px; height: 500px;"></iframe>
+					</section>
+
+					<section data-transition="linear">
+					    <iframe src="http://framerjs.com/examples/preview/#carousel-onboarding.framer" style="width: 1920px; height: 500px;"></iframe>
+					</section>
+				</section>
+				<section data-transition="linear">
+					<section data-transition="linear">
+						<h1>Prototype 0</h1>
+						<h3>Scroll</h3>
+					</section>
+					<section data-transition="linear">
+					    <iframe src="http://share.framerjs.com/hkhcl6xfztih/" style="width: 1920px; height: 500px;"></iframe>
+					</section>
+					<section data-transition="linear">
+					    <h3>Import sketch file</h3>
+					    <img src="images/sketch0.png" style="border:0px;box-shadow: 0 0 0px rgba(0, 0, 0, 0);background:#22b4fb;width:1280px;">
+					</section>
+					<section data-transition="linear">
+						<pre><code data-trim>
+						Utils.globalLayers(prototype0)
+						</code></pre>
+					</section>
+
+					<section data-transition="linear">
+						<h3>Create a new ScrollComponent </h3>
+						<pre><code data-trim>
+						scroll = new ScrollComponent
+    width: 750
+    height: 1206
+    y: 126
+    x: 0
+scrollAvatar.superLayer = scroll.content
+						</code></pre>
+					</section>
+
+					<section data-transition="linear">
+						<h3>Add padding</h3>
+						<pre><code data-trim>
+						scroll.contentInset =
+    bottom: 80
+    top: -100
+						</code></pre>
+						<aside class="notes">
+					   		scroll裡面新增padding
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h3>Enable or disable horizontal scrolling.</h3>
+						<pre><code data-trim>
+						scroll.scrollHorizontal = false
+						</code></pre>
+
+					</section>
+				</section>
+
+
+				<section data-transition="linear">
+					<section data-transition="linear">
+						<h1>Prototype 1</h1>
+						<h3>Click &amp; Utilities</h3>
+					</section>
+
+					<section data-transition="linear">
+					    <iframe src="http://share.framerjs.com/3boq2t7iftpj/" style="width: 1920px; height: 500px;"></iframe>
+					</section>
+
+					
+					<section data-transition="linear">
+					    <h3>Import sketch file</h3>
+					    <img src="images/sketch.png" style="border:0px;box-shadow: 0 0 0px rgba(0, 0, 0, 0);background:#22b4fb;width:1280px;">
+					</section>
+
+					<section data-transition="linear">
+					    <iframe src="http://share.framerjs.com/hdhdgaervf1x/" style="width: 1920px; height: 500px;"></iframe>
+					    <aside class="notes">
+					   		friction: 摩擦。tension:張力。velocity:速度。
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<pre><code data-trim>
+						springVal = 'spring(300,0,30)'
+						</code></pre>
+
+						<pre><code data-trim>
+						Framer.Defaults.Animation =
+	curve: "spring"
+	curveOptions:
+		tension: 95
+		friction: 30
+		velocity: 30
+						</code></pre>
+					</section>
+
+					<section data-transition="linear">
+					    <pre><code data-trim>
+						avatarCount = 12
+						</code></pre>
+
+						<pre><code data-trim>
+						for count in [1..avatarCount]
+	avatarAll = prototype1["avatar" + count]
+	avatarAll.states.add
+		start: {scale:0, opacity:0}
+	avatarAll.states.switchInstant "start"
+						</code></pre>
+						<aside class="notes">
+					   		switchInstant顧名思義就是轉到這個狀態，但沒有任何動畫
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+					    <h3>Click Event</h3>	
+
+						<pre><code data-trim>
+						prototype1.close_btn.on Events.Click, ->
+	prototype1.cardAll.animate
+		properties: 
+			opacity: 0
+						</code></pre>
+						
+					</section>
+
+					<section data-transition="linear">
+					    <h3>Utilities</h3>	
+
+						<pre><code data-trim>
+						Utils.delay 0.5, ->
+	timeFactor = 0.03
+	Utils.delay 1 * timeFactor, -> prototype1.avatar1.states.next()
+	Utils.delay 2 * timeFactor, -> prototype1.avatar2.states.next()
+	Utils.delay 3 * timeFactor, -> prototype1.avatar3.states.next()
+	Utils.delay 4 * timeFactor, -> prototype1.avatar4.states.next()
+	Utils.delay 5 * timeFactor, -> prototype1.avatar5.states.next()
+	Utils.delay 6 * timeFactor, -> prototype1.avatar6.states.next()
+	Utils.delay 7 * timeFactor, -> prototype1.avatar7.states.next()
+	Utils.delay 8 * timeFactor, -> prototype1.avatar8.states.next()
+	Utils.delay 9 * timeFactor, -> prototype1.avatar9.states.next()
+	Utils.delay 10 * timeFactor, -> prototype1.avatar10.states.next()
+	Utils.delay 11 * timeFactor, -> prototype1.avatar11.states.next()
+	Utils.delay 12 * timeFactor, -> prototype1.avatar12.states.next()
+						</code></pre>
+
+						<aside class="notes">
+					   		utilities一些客製化的function，讓framer更簡單快速使用
+						</aside>
+						
+					</section>
+
+
+
+				</section>
+
+		
+
+				<section data-transition="linear" data-background="#35b9f7" data-background-transition="linear">
+					<section>
+						<h1>Q &amp; A</h1>
+					</section>
+				</section>
+				<section data-transition="linear" data-background="#35b9f7" data-background-transition="linear">
+					<section>
+						<img src="images/logo.png" style="border:0px;box-shadow: 0 0 0px rgba(0, 0, 0, 0);background:#35b9f7;width:180px;">
+						<h2>@ricetseng</h2>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/linear-js/linear.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
